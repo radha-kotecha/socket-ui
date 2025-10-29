@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { Route, Routes } from "react-router-dom";
+import { App as AppComponent } from "json-builder-ui"
 import './App.css'
 
 const DynamicUI = () => {
@@ -10,18 +10,17 @@ const Modeling = () => {
   return <div>
     <h1>Modeling</h1>
     <Routes>
-      <Route path="/dynamic-ui" element={<DynamicUI />} />
+      <Route path="dynamic-ui/*" element={<AppComponent />} />
     </Routes>
   </div>
 }
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
       <Routes>
-        <Route path="/modeling/*" element={<Modeling />} />
+        <Route path="modeling/*" element={<Modeling />} />
       </Routes>
     </div>
   )
